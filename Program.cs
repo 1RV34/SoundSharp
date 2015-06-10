@@ -68,11 +68,7 @@ namespace SoundSharp
                     switch (input.KeyChar)
                     {
                         case '1':
-                            ShowMP3Player(1);
-                            ShowMP3Player(2);
-                            ShowMP3Player(3);
-                            ShowMP3Player(4);
-                            ShowMP3Player(5);
+                            ShowMP3Players();
                             break;
 
                         case '9':
@@ -83,75 +79,65 @@ namespace SoundSharp
             }
         }
 
-        static void ShowMP3Player(int id)
+        static void ShowMP3Players()
         {
-            var mp3Player = GetMP3Player(id);
-            Console.WriteLine(""); // Spacing
-            Console.WriteLine(""); // Spacing
-            Console.WriteLine("mp3 speler " + mp3Player.id + ":");
-            Console.WriteLine(""); // Spacing
-            Console.WriteLine("Merk:             " + mp3Player.make);
-            Console.WriteLine("Model:            " + mp3Player.model);
-            Console.WriteLine("Opslagcapaciteit: " + mp3Player.mbSize + " MB");
-            Console.WriteLine("Prijs:            " + mp3Player.price);
+            MP3Player[] mp3Players = GetMP3Players();
+
+            foreach (MP3Player mp3Player in mp3Players)
+            {
+                Console.WriteLine(""); // Spacing
+                Console.WriteLine(""); // Spacing
+                Console.WriteLine("mp3 speler " + mp3Player.id + ":");
+                Console.WriteLine(""); // Spacing
+                Console.WriteLine("Merk:             " + mp3Player.make);
+                Console.WriteLine("Model:            " + mp3Player.model);
+                Console.WriteLine("Opslagcapaciteit: " + mp3Player.mbSize + " MB");
+                Console.WriteLine("Prijs:            " + mp3Player.price);
+            }
         }
 
-        static MP3Player GetMP3Player(int id)
+        static MP3Player[] GetMP3Players()
         {
+            MP3Player[] mp3Players = new MP3Player[5];
+
             MP3Player mp3Player;
 
-            switch (id)
-            {
-                case 1:
-                    mp3Player.id = 1;
-                    mp3Player.make = "GET technologies .inc";
-                    mp3Player.model = "HF 410";
-                    mp3Player.mbSize = 4096;
-                    mp3Player.price = 129.95f;
-                    break;
+            mp3Player.id = 1;
+            mp3Player.make = "GET technologies .inc";
+            mp3Player.model = "HF 410";
+            mp3Player.mbSize = 4096;
+            mp3Player.price = 129.95f;
+            mp3Players[0] = mp3Player;
 
-                case 2:
-                    mp3Player.id = 2;
-                    mp3Player.make = "Far & Loud";
-                    mp3Player.model = "XM 600";
-                    mp3Player.mbSize = 8192;
-                    mp3Player.price = 224.95f;
-                    break;
+            mp3Player.id = 2;
+            mp3Player.make = "Far & Loud";
+            mp3Player.model = "XM 600";
+            mp3Player.mbSize = 8192;
+            mp3Player.price = 224.95f;
+            mp3Players[1] = mp3Player;
 
-                case 3:
-                    mp3Player.id = 3;
-                    mp3Player.make = "Innotivative";
-                    mp3Player.model = "Z3";
-                    mp3Player.mbSize = 512;
-                    mp3Player.price = 79.95f;
-                    break;
+            mp3Player.id = 3;
+            mp3Player.make = "Innotivative";
+            mp3Player.model = "Z3";
+            mp3Player.mbSize = 512;
+            mp3Player.price = 79.95f;
+            mp3Players[2] = mp3Player;
 
-                case 4:
-                    mp3Player.id = 4;
-                    mp3Player.make = "Resistance S.A.";
-                    mp3Player.model = "3001";
-                    mp3Player.mbSize = 4096;
-                    mp3Player.price = 124.95f;
-                    break;
+            mp3Player.id = 4;
+            mp3Player.make = "Resistance S.A.";
+            mp3Player.model = "3001";
+            mp3Player.mbSize = 4096;
+            mp3Player.price = 124.95f;
+            mp3Players[3] = mp3Player;
 
-                case 5:
-                    mp3Player.id = 5;
-                    mp3Player.make = "CBA";
-                    mp3Player.model = "NXT volume";
-                    mp3Player.mbSize = 2048;
-                    mp3Player.price = 159.05f;
-                    break;
+            mp3Player.id = 5;
+            mp3Player.make = "CBA";
+            mp3Player.model = "NXT volume";
+            mp3Player.mbSize = 2048;
+            mp3Player.price = 159.05f;
+            mp3Players[4] = mp3Player;
 
-                default:
-                    mp3Player.id = 0;
-                    mp3Player.make = "";
-                    mp3Player.model = "";
-                    mp3Player.mbSize = 0;
-                    mp3Player.price = 0;
-                    break;
-            }
-
-            return mp3Player;
+            return mp3Players;
         }
 
         static string Login()
