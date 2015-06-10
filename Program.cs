@@ -37,6 +37,34 @@ namespace SoundSharp
 			Console.ReadLine();
 		}
 
+        static void ShowMenu()
+        {
+            IDictionary<char, string> menu = new Dictionary<char, string>();
+            menu['1'] = "Overzicht mp3 spelers";
+            menu['9'] = "Exit";
+
+            foreach (KeyValuePair<char, string> menuItem in menu)
+                Console.WriteLine(menuItem.Key + ". " + menuItem.Value);
+
+            while (true)
+            {
+                var input = Console.ReadKey(true);
+
+                if (menu.ContainsKey(input.KeyChar))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Gekoze actie: " + menu[input.KeyChar]);
+
+                    switch (input.KeyChar)
+                    {
+                        case '9':
+                            Console.WriteLine("Tot ziens!");
+                            break;
+                    }
+                }
+            }
+        }
+
 		static string Login()
 		{
 			var attemptsLeft = ALLOWED_AUTHENTICATION_ATTEMPTS;
