@@ -69,6 +69,10 @@ namespace SoundSharp
                     {
                         case '1':
                             ShowMP3Player(1);
+                            ShowMP3Player(2);
+                            ShowMP3Player(3);
+                            ShowMP3Player(4);
+                            ShowMP3Player(5);
                             break;
 
                         case '9':
@@ -104,6 +108,38 @@ namespace SoundSharp
                     mp3Player.model = "HF 410";
                     mp3Player.mbSize = 4096;
                     mp3Player.price = 129.95f;
+                    break;
+
+                case 2:
+                    mp3Player.id = 2;
+                    mp3Player.make = "Far & Loud";
+                    mp3Player.model = "XM 600";
+                    mp3Player.mbSize = 8192;
+                    mp3Player.price = 224.95f;
+                    break;
+
+                case 3:
+                    mp3Player.id = 3;
+                    mp3Player.make = "Innotivative";
+                    mp3Player.model = "Z3";
+                    mp3Player.mbSize = 512;
+                    mp3Player.price = 79.95f;
+                    break;
+
+                case 4:
+                    mp3Player.id = 4;
+                    mp3Player.make = "Resistance S.A.";
+                    mp3Player.model = "3001";
+                    mp3Player.mbSize = 4096;
+                    mp3Player.price = 124.95f;
+                    break;
+
+                case 5:
+                    mp3Player.id = 5;
+                    mp3Player.make = "CBA";
+                    mp3Player.model = "NXT volume";
+                    mp3Player.mbSize = 2048;
+                    mp3Player.price = 159.05f;
                     break;
 
                 default:
