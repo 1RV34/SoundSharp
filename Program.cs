@@ -25,6 +25,7 @@ namespace SoundSharp
 
 				case "OK":
 					Console.WriteLine("Welkom bij SoundSharp, " + name + "!");
+                    ShowMenu();
 					break;
 
 				default:
@@ -59,7 +60,7 @@ namespace SoundSharp
                     {
                         case '9':
                             Console.WriteLine("Tot ziens!");
-                            break;
+                            return;
                     }
                 }
             }
