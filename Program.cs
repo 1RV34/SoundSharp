@@ -25,6 +25,7 @@ namespace SoundSharp
 
 				case "OK":
 					Console.WriteLine("Welkom bij SoundSharp, " + name + "!");
+                    ShowMenu();
 					break;
 
 				default:
