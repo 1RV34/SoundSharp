@@ -83,11 +83,13 @@ namespace SoundSharp
         {
             var mp3Player = GetMP3Player(id);
             Console.WriteLine(""); // Spacing
-            Console.WriteLine("- " + mp3Player.id + " ----------------------------------------");
-            Console.WriteLine("Merk: " + mp3Player.make);
-            Console.WriteLine("Model: " + mp3Player.model);
-            Console.WriteLine("Opslagcapaciteit: " + mp3Player.mbSize + "MB");
-            Console.WriteLine("Prijs: " + mp3Player.price);
+            Console.WriteLine(""); // Spacing
+            Console.WriteLine("mp3 speler " + mp3Player.id + ":");
+            Console.WriteLine(""); // Spacing
+            Console.WriteLine("Merk:             " + mp3Player.make);
+            Console.WriteLine("Model:            " + mp3Player.model);
+            Console.WriteLine("Opslagcapaciteit: " + mp3Player.mbSize + " MB");
+            Console.WriteLine("Prijs:            " + mp3Player.price);
         }
 
         static MP3Player GetMP3Player(int id)
