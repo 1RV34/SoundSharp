@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace SoundSharp
 {
-	class Program
+    struct MP3Player
+    {
+        public int id;
+        public string make;
+        public string model;
+        public double mbSize;
+        public float price;
+    }
+
+    class Program
 	{
 		const int ALLOWED_AUTHENTICATION_ATTEMPTS = 3;
 
@@ -63,6 +72,17 @@ namespace SoundSharp
                     }
                 }
             }
+        }
+
+        static MP3Player GetMP3Player(int id)
+        {
+            MP3Player mp3Player;
+            mp3Player.id = 1;
+            mp3Player.make = "GET technologies .inc";
+            mp3Player.model = "HF 410";
+            mp3Player.mbSize = 4096;
+            mp3Player.price = 129.95f;
+            return mp3Player;
         }
 
 		static string Login()
