@@ -60,7 +60,7 @@ namespace SoundSharp
                     {
                         case '9':
                             Console.WriteLine("Tot ziens!");
-                            break;
+                            return;
                     }
                 }
             }
