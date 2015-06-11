@@ -14,6 +14,7 @@ namespace SoundSharp
         public string model;
         public double mbSize;
         public float price;
+        public int stock;
     }
 
     class Program
@@ -52,6 +53,7 @@ namespace SoundSharp
         {
             IDictionary<char, string> menu = new Dictionary<char, string>();
             menu['1'] = "Overzicht mp3 spelers";
+            menu['2'] = "Overzicht voorraad";
             menu['9'] = "Exit";
 
             foreach (KeyValuePair<char, string> menuItem in menu)
@@ -70,6 +72,10 @@ namespace SoundSharp
                     {
                         case '1':
                             ShowMP3Players();
+                            break;
+
+                        case '2':
+                            ShowStock();
                             break;
 
                         case '9':
@@ -97,6 +103,20 @@ namespace SoundSharp
             }
         }
 
+        static void ShowStock()
+        {
+            var mp3Players = GetMP3Players();
+
+            foreach (MP3Player mp3Player in mp3Players)
+            {
+                Console.WriteLine(""); // Spacing
+                Console.WriteLine(""); // Spacing
+                Console.WriteLine("mp3 speler " + mp3Player.id + ":");
+                Console.WriteLine(""); // Spacing
+                Console.WriteLine("Voorraad: " + mp3Player.stock);
+            }
+        }
+
         static ArrayList GetMP3Players()
         {
             var mp3Players = new ArrayList();
@@ -108,6 +128,7 @@ namespace SoundSharp
             mp3Player.model = "HF 410";
             mp3Player.mbSize = 4096;
             mp3Player.price = 129.95f;
+            mp3Player.stock = 500;
             mp3Players.Add(mp3Player);
 
             mp3Player.id = 2;
@@ -115,6 +136,7 @@ namespace SoundSharp
             mp3Player.model = "XM 600";
             mp3Player.mbSize = 8192;
             mp3Player.price = 224.95f;
+            mp3Player.stock = 500;
             mp3Players.Add(mp3Player);
 
             mp3Player.id = 3;
@@ -122,6 +144,7 @@ namespace SoundSharp
             mp3Player.model = "Z3";
             mp3Player.mbSize = 512;
             mp3Player.price = 79.95f;
+            mp3Player.stock = 500;
             mp3Players.Add(mp3Player);
 
             mp3Player.id = 4;
@@ -129,6 +152,7 @@ namespace SoundSharp
             mp3Player.model = "3001";
             mp3Player.mbSize = 4096;
             mp3Player.price = 124.95f;
+            mp3Player.stock = 500;
             mp3Players.Add(mp3Player);
 
             mp3Player.id = 5;
@@ -136,6 +160,7 @@ namespace SoundSharp
             mp3Player.model = "NXT volume";
             mp3Player.mbSize = 2048;
             mp3Player.price = 159.05f;
+            mp3Player.stock = 500;
             mp3Players.Add(mp3Player);
 
             return mp3Players;
