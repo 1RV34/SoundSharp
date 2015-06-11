@@ -72,6 +72,10 @@ namespace SoundSharp
                             ShowStock();
                             break;
 
+                        case '3':
+                            ShowMutations();
+                            break;
+
                         case '8':
                             DisplayMenu();
                             break;
@@ -89,6 +93,7 @@ namespace SoundSharp
             IDictionary<char, string> menu = new Dictionary<char, string>();
             menu['1'] = "Overzicht mp3 spelers";
             menu['2'] = "Overzicht voorraad";
+            menu['3'] = "Muteer voorraad";
             menu['8'] = "Toom menu";
             menu['9'] = "Exit";
 
@@ -128,6 +133,9 @@ namespace SoundSharp
                 Console.WriteLine("Voorraad: " + mp3Player.stock);
             }
         }
+
+        static void ShowMutations()
+        {}
 
         static ArrayList GetMP3Players()
         {
