@@ -51,13 +51,7 @@ namespace SoundSharp
 
         static void ShowMenu()
         {
-            IDictionary<char, string> menu = new Dictionary<char, string>();
-            menu['1'] = "Overzicht mp3 spelers";
-            menu['2'] = "Overzicht voorraad";
-            menu['9'] = "Exit";
-
-            foreach (KeyValuePair<char, string> menuItem in menu)
-                Console.WriteLine(menuItem.Key + ". " + menuItem.Value);
+            var menu = DisplayMenu();
 
             while (true)
             {
@@ -78,12 +72,30 @@ namespace SoundSharp
                             ShowStock();
                             break;
 
+                        case '8':
+                            DisplayMenu();
+                            break;
+
                         case '9':
                             Console.WriteLine("Tot ziens!");
                             return;
                     }
                 }
             }
+        }
+
+        static IDictionary<char, string> DisplayMenu()
+        {
+            IDictionary<char, string> menu = new Dictionary<char, string>();
+            menu['1'] = "Overzicht mp3 spelers";
+            menu['2'] = "Overzicht voorraad";
+            menu['8'] = "Toom menu";
+            menu['9'] = "Exit";
+
+            foreach (KeyValuePair<char, string> menuItem in menu)
+                Console.WriteLine(menuItem.Key + ". " + menuItem.Value);
+
+            return menu;
         }
 
         static void ShowMP3Players()
