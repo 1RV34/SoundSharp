@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,7 +82,7 @@ namespace SoundSharp
 
         static void ShowMP3Players()
         {
-            MP3Player[] mp3Players = GetMP3Players();
+            var mp3Players = GetMP3Players();
 
             foreach (MP3Player mp3Player in mp3Players)
             {
@@ -96,9 +97,9 @@ namespace SoundSharp
             }
         }
 
-        static MP3Player[] GetMP3Players()
+        static ArrayList GetMP3Players()
         {
-            MP3Player[] mp3Players = new MP3Player[5];
+            var mp3Players = new ArrayList();
 
             MP3Player mp3Player;
 
@@ -107,35 +108,35 @@ namespace SoundSharp
             mp3Player.model = "HF 410";
             mp3Player.mbSize = 4096;
             mp3Player.price = 129.95f;
-            mp3Players[0] = mp3Player;
+            mp3Players.Add(mp3Player);
 
             mp3Player.id = 2;
             mp3Player.make = "Far & Loud";
             mp3Player.model = "XM 600";
             mp3Player.mbSize = 8192;
             mp3Player.price = 224.95f;
-            mp3Players[1] = mp3Player;
+            mp3Players.Add(mp3Player);
 
             mp3Player.id = 3;
             mp3Player.make = "Innotivative";
             mp3Player.model = "Z3";
             mp3Player.mbSize = 512;
             mp3Player.price = 79.95f;
-            mp3Players[2] = mp3Player;
+            mp3Players.Add(mp3Player);
 
             mp3Player.id = 4;
             mp3Player.make = "Resistance S.A.";
             mp3Player.model = "3001";
             mp3Player.mbSize = 4096;
             mp3Player.price = 124.95f;
-            mp3Players[3] = mp3Player;
+            mp3Players.Add(mp3Player);
 
             mp3Player.id = 5;
             mp3Player.make = "CBA";
             mp3Player.model = "NXT volume";
             mp3Player.mbSize = 2048;
             mp3Player.price = 159.05f;
-            mp3Players[4] = mp3Player;
+            mp3Players.Add(mp3Player);
 
             return mp3Players;
         }
